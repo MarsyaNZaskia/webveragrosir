@@ -31,6 +31,73 @@ font-family: 'Roboto', sans-serif;
     margin: 0;
 }
 
+/* --- Umum: Memberikan padding dan background yang soft --- */
+.populer-products {
+	background-color: #f8f9fa;
+	padding: 60px 0;
+}
+
+.populer-products h2 a {
+	color: #333;
+	font-weight: 600;
+	text-decoration: none;
+	font-size: 18px;
+	transition: color 0.3s ease;
+}
+
+.populer-products h2 a:hover {
+	color: #e67e22;
+}
+
+/* --- Gambar produk utama dan pendukung --- */
+.single-populer-product-img img,
+.single-inner-populer-product-img img {
+	width: 100%;
+	height: 220px;
+	object-fit: cover;
+	border-radius: 10px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+	transition: transform 0.3s ease;
+}
+
+.single-populer-product-img:hover img,
+.single-inner-populer-product-img:hover img {
+	transform: scale(1.03);
+}
+
+/* --- Paragraphs and Text --- */
+.single-populer-products-para p,
+.single-inner-populer-product-txt p {
+	color: #666;
+	font-size: 14px;
+	margin-top: 10px;
+	line-height: 1.6;
+}
+
+/* --- Price section --- */
+.populer-products-price h4 {
+	color: #e67e22;
+	font-weight: 500;
+	margin-top: 10px;
+	font-size: 16px;
+}
+
+.populer-products-btn:hover {
+	background-color: #555;
+}
+
+/* --- Margin spacing fix for top images --- */
+.mt40 {
+	margin-top: 20px;
+}
+
+/* --- Optional: Row spacing between items on smaller screens --- */
+@media (max-width: 767px) {
+	.populer-products .row > div {
+		margin-bottom: 30px;
+	}
+}
+
 *{
 	-webkit-box-sizing:border-box;
 	-moz-box-sizing:border-box;
