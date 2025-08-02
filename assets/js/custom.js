@@ -104,4 +104,4 @@ $(document).ready(function(){
 			$(this).parents(".single-cart-list").fadeOut();
 		});
 
-});
+});gi
