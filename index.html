@@ -86,7 +86,7 @@
 														<!-- <span class="lnr lnr-plus-circle"></span> -->
 														Pesan <span>Sekarang</span>
 													</button>
-													<button class="btn-cart welcome-add-cart welcome-more-info" onclick="window.location.href='#'">
+													<button class="btn-cart welcome-add-cart welcome-more-info scroll" onclick="window.location.href='#katalog'">
 														Lihat Katalog
 													</button>
 												</div><!--/.welcome-hero-txt-->
@@ -131,7 +131,7 @@
 														<!-- <span class="lnr lnr-plus-circle"></span> -->
 														Pesan <span>Sekarang</span>
 													</button>
-													<button class="btn-cart welcome-add-cart welcome-more-info" onclick="window.location.href='#'">
+													<button class="btn-cart welcome-add-cart welcome-more-info scroll" onclick="window.location.href='#katalog'">
 														Lihat Katalog
 													</button>
 												</div><!--/.welcome-hero-txt-->
@@ -243,8 +243,8 @@
 				            <!-- Collect the nav links, forms, and other content for toggling -->
 				            <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
 				                <ul class="nav navbar-nav navbar-center" data-in="fadeInDown" data-out="fadeOutUp">
-				                    <li class=" scroll active"><a href="#home">home</a></li>
-				                    <li class="scroll"><a href="#new-arrivals">Produk</a></li>
+				                    <li class="scroll active"><a href="#home">home</a></li>
+				                    <li><a href="produk.html">Produk</a></li>
 				                    <li class="scroll"><a href="#feature">Rating</a></li>
 				                    <li class="scroll"><a href="#blog">blog</a></li>
 				                    <li class="scroll"><a href="#newsletter">Kontak</a></li>
@@ -335,7 +335,7 @@
 		<!--populer-products end-->
 
 		<!--new-arrivals start -->
-		<section id="new-arrivals" class="new-arrivals">
+		<section id="katalog" class="new-arrivals">
 			<div class="container">
 				<div class="section-header">
 					<h2>Katalog</h2>
@@ -1285,6 +1285,18 @@
         <!--Custom JS-->
         <script src="assets/js/custom.js"></script>
         
+		
+		 <script>
+		 document.querySelectorAll('a[href^="#katalog"], button[onclick*="#katalog"]').forEach(function(el) {
+			el.addEventListener('click', function(e) {
+				e.preventDefault();
+				var target = document.getElementById('new-arrivals');
+				if(target) {
+					target.scrollIntoView({ behavior: 'smooth' });
+				}
+			});
+			});
+</script>
     </body>
 	
 </html>
