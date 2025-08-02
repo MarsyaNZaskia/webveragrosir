@@ -104,4 +104,51 @@ $(document).ready(function(){
 			$(this).parents(".single-cart-list").fadeOut();
 		});
 
+	// 5. catalog pagination
+// Ambil semua produk katalog
+const products = Array.from(document.querySelectorAll('#catalog-list > .col-md-3, #catalog-list > .col-sm-4'));
+const productsPerPage = 8;
+const totalPages = Math.ceil(products.length / productsPerPage);
+const pagination = document.getElementById('catalog-pagination');
+
+function showPage(page) {
+    // Sembunyikan semua produk
+    products.forEach((el, i) => {
+        el.style.display = 'none';
+    });
+    // Tampilkan produk sesuai halaman
+    const start = (page - 1) * productsPerPage;
+    const end = start + productsPerPage;
+    products.slice(start, end).forEach(el => {
+        el.style.display = '';
+    });
+    // Highlight halaman aktif
+    Array.from(pagination.children).forEach((li, i) => {
+        if (i === page - 1) li.classList.add('active');
+        else li.classList.remove('active');
+    });
+}
+
+// Buat tombol pagination
+pagination.innerHTML = '';
+for (let i = 1; i <= totalPages; i++) {
+    const li = document.createElement('li');
+    li.className = 'page-item';
+    const a = document.createElement('a');
+    a.className = 'page-link';
+    a.href = '#';
+    a.textContent = i;
+    a.onclick = function(e) {
+        e.preventDefault();
+        showPage(i);
+    };
+    li.appendChild(a);
+    pagination.appendChild(li);
+}
+
+// Tampilkan halaman pertama saat load
+if (totalPages > 0) showPage(1);
+
+
 });
+
